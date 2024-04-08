@@ -1,9 +1,9 @@
 import React from 'react'
 import Header from './Header'
-import LockIcon from '@material-ui/icons/Lock';
-import EditLocationIcon from '@material-ui/icons/EditLocation';
-import FolderSpecialIcon from '@material-ui/icons/FolderSpecial';
-import ContactSupportIcon from '@material-ui/icons/ContactSupport';
+import LockIcon from '@mui/icons-material/Lock';
+import EditLocationIcon from '@mui/icons-material/EditLocation';
+import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import { NavLink } from 'react-router-dom';
 const Accounts = () => {
   const auth = localStorage.getItem("user");
