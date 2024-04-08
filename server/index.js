@@ -9,6 +9,7 @@ const corsOptions = {
     origin: ["http://localhost:5173", "https://amazon-clone-front.vercel.app"],
     methods: "POST,GET,PUT,DELETE,HEAD,PATCH",
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
   };
 
 const app =express();
@@ -173,4 +174,7 @@ function verifyToken(req,res,next){
 const PORT = 5000 || "https://amazon-clone-back.vercel.app"
 
 
-app.listen(5000);
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
