@@ -10,6 +10,10 @@ const app =express();
 app.use(express.json());
 app.use(cors());
 
+
+app.get("/",async(req,res)=>{
+    res.send("Home")
+})
 app.post("/register",async(req,res)=>{
     let User = new user(req.body);
     let result = await User.save();
