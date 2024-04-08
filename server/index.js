@@ -171,7 +171,7 @@ function verifyToken(req,res,next){
    
 
 }
-const PORT = 5000 || "https://amazon-clone-back.vercel.app"
+const PORT = "https://amazon-clone-back.vercel.app" || 5000
 
 
 
