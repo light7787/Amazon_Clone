@@ -21,7 +21,7 @@ const UpdateProduct = () => {
 
   const getProductDetails = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/product/${params.id}`);
+      const response = await fetch(`https://amazon-clone-back.vercel.app/product/${params.id}`);
       const result = await response.json();
       setName(result.name);
       setPrice(result.price);
@@ -40,7 +40,7 @@ const UpdateProduct = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/product/${params.id}`, {
+      const response = await fetch(`https://amazon-clone-back.vercel.app/product/${params.id}`, {
         method: "PUT",
         body: JSON.stringify({ name, price, category, img, rating }),
         headers: {

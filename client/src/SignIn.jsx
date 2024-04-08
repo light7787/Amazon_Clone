@@ -35,7 +35,7 @@ const collectData = async(e)=>{
   e.preventDefault();
   let admin= false;
   console.warn(name,email,password);
-  let result = await fetch('http://localhost:5000/register',{
+  let result = await fetch('https://amazon-clone-back.vercel.app/register',{
 
   method:'post',
   body: JSON.stringify({name,email,password,admin}),

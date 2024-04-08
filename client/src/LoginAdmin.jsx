@@ -12,7 +12,7 @@ const LoginAdmin = () => {
         console.log("email,password",email,password);
         e.preventDefault();
         if(key===secure){
-            let result = await fetch('http://localhost:5000/login',{
+            let result = await fetch('https://amazon-clone-back.vercel.app/login',{
       
             method:'post',
             body: JSON.stringify({email,password}),

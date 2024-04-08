@@ -26,7 +26,7 @@ function Header() {
   const searchHandle = async (event) => {
     let key = event.target.value;
     if (key) {
-      let result = await fetch(`http://localhost:5000/search/${key}`);
+      let result = await fetch(`https://amazon-clone-back.vercel.app/search/${key}`);
       result = await result.json();
       if (result) {
         UserData(result);

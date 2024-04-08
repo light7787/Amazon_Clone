@@ -13,7 +13,7 @@ const User = () => {
 
   const getUsers = async () => {
     try {
-      let response = await fetch("http://localhost:5000/users");
+      let response = await fetch("https://amazon-clone-back.vercel.app/users");
       let result = await response.json();
       setUsers(result);
     } catch (error) {

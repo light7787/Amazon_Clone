@@ -15,7 +15,7 @@ function Home() {
 
   const getProducts = async () => {
     try {
-      let response = await fetch('http://localhost:5000/product');
+      let response = await fetch('https://amazon-clone-back.vercel.app/product');
       let result = await response.json();
       setProducts(result);
     } catch (error) {

@@ -33,7 +33,7 @@ const AccountUpdate = () => {
 
     const getUserDetails = async () => {
         try {
-            let result = await fetch(`http://localhost:5000/userupdate/${params.id}`);
+            let result = await fetch(`https://amazon-clone-back.vercel.app/userupdate/${params.id}`);
             result = await result.json();
             setUserDetails(result);
             setName(result.name);
@@ -51,7 +51,7 @@ const AccountUpdate = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:5000/userupdate/${params.id}`, {
+            const response = await fetch(`https://amazon-clone-back.vercel.app/userupdate/${params.id}`, {
                 method: "PUT",
                 body: JSON.stringify({ name, email, password }),
                 headers: {

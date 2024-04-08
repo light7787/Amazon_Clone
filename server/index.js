@@ -5,10 +5,15 @@ const user = require('./user');
 const Product = require('./product');
 const Jwt = require('jsonwebtoken');
 const JwtKey = 'e-comm';
+const corsOptions = {
+    origin: ["http://localhost:5173", "https://amazon-clone-front.vercel.app/"],
+    methods: "POST,GET,PUT,DELETE,HEAD,PATCH",
+    credentials: true,
+  };
 
 const app =express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 
 app.get("/",async(req,res)=>{

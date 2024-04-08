@@ -18,7 +18,7 @@ const AddProduct = () => {
       return false;
     }
 
-    let result = await fetch("http://localhost:5000/add-product", {
+    let result = await fetch("https://amazon-clone-back.vercel.app/add-product", {
       method: "post",
       body: JSON.stringify({ name, price, category, img, rating }),
       headers: {
