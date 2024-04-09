@@ -44,7 +44,7 @@ function Header() {
       <NavLink to="/">
         <img
           className="header__logo w-[100px] object-contain mt-[18px] ml-[20px] mr-[20px] mb-0"
-          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9FaAsqx821SC5iSPH0LW2Kb3HPksLOl-Cr_sdzLOruw&s"
           alt="Amazon Logo"
         />
       </NavLink>
