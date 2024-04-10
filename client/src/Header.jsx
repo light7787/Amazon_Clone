@@ -43,8 +43,8 @@ function Header() {
     <div className="header h-[60px] flex align-middle bg-[#131921] sticky top-0 z-100">
       <NavLink to="/">
         <img
-          className="header__logo w-[100px] object-contain mt-[18px] ml-[20px] mr-[20px] mb-0"
-          src="https://cdn3.vectorstock.com/i/1000x1000/10/12/a-trolley-shopping-cart-logo-icon-design-shop-vector-26981012.jpg"
+          className="header__logo w-[60px] block mt-0 mb-[8px]  ml-[20px] mr-[20px]"
+          src="https://cdn.iconscout.com/icon/free/png-512/shopping-cart-442-1151214.png"
           alt="Amazon Logo"
         />
       </NavLink>
