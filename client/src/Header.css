@@ -1,0 +1,4 @@
+.header__logo {
+    background-color: transparent; /* Make the background transparent */
+    filter: contrast(1); /* Adjust contrast if needed */
+  }
