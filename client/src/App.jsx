@@ -12,6 +12,9 @@ import Basket from './Basket';
 import User from './User';
 import Accounts from './Accounts';
 import AccountUpdate from './AccountUpdate';
+import SearchPage from './SearchPage';
+import Address from './Address';
+import Addaddress from './Addaddress';
 
 // import PrivateComponent from './privateComponent';
 
@@ -34,6 +37,9 @@ function App() {
         <Route path='/userlist' element={<User/>}/>
         <Route path='/accounts' element={<Accounts/>}/>
         <Route path='/userupdate/:id' element={<AccountUpdate/>}/>
+        <Route path='/searchpage' element={<SearchPage/>}/>
+        <Route path='/address' element={<Address/>}/>
+        <Route path='/add-address' element={<Addaddress/>}/>
 
        
         

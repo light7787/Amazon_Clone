@@ -6,7 +6,7 @@ import { useAuth } from './Store';
 
 function Home() {
   const [products, setProducts] = useState([]);
-  const { userdata } = useAuth();
+  
   const types = [{ type: 'mobile' }, { type: 'laptop' },{type:'earphone'},{type:'speakers'}];
 
   useEffect(() => {

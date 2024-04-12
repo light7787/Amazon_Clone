@@ -22,10 +22,12 @@ const Accounts = () => {
   </div></NavLink>
   <div className='h-[100px] w-[200px] border border-gray-500 cursor-pointer rounded flex  bg-gray-200 hover:bg-gray-300  transition-colors duration-300 ease-in-out ' >
   <div className='mt-3 ml-3'><EditLocationIcon></EditLocationIcon></div>
+  <NavLink to='/address'>
   <div className=' flex flex-col mt-4  ' >
-    <div className='font-bold'>Your Adress</div>
+   
+    <div className='font-bold' >Your Adress</div>
     <div className='text-[15px]'>Edit adress for orders & gifts</div>
-  </div>
+  </div></NavLink>
   </div>
   <div className='h-[100px] w-[200px] border border-gray-500 cursor-pointer rounded flex  bg-gray-200 hover:bg-gray-300  transition-colors duration-300 ease-in-out ' >
   <div className='mt-3 ml-3'><FolderSpecialIcon></FolderSpecialIcon></div>

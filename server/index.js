@@ -3,10 +3,16 @@ const cors = require('cors');
 require('./config')
 const user = require('./user');
 const Product = require('./product');
+const Address = require('./address');
+
+
+
+
+
 const Jwt = require('jsonwebtoken');
 const JwtKey = 'e-comm';
 const corsOptions = {
-    origin: ["http://localhost:5173", "https://amazon-clone-front.vercel.app"],
+    origin: ["https://amazon-clone-front.vercel.app","http://localhost:5173" ],
     methods: "POST,GET,PUT,DELETE,HEAD,PATCH",
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization']
@@ -15,6 +21,12 @@ const corsOptions = {
 const app =express();
 app.use(express.json());
 app.use(cors(corsOptions));
+
+app.post('/add-address', verifyToken ,async(req,res)=>{
+    let address = new Address(req.body);
+    let result = await address.save();
+    res.send(result);
+})
 
 
 app.get("/",async(req,res)=>{
@@ -31,9 +43,6 @@ app.post("/register",async(req,res)=>{
         }
         res.send({result,auth:token})
     })
-   
-    
-
 })
 app.post("/login",async(req,res)=>{
     let User = await user.findOne(req.body).select('-password');
@@ -63,8 +72,6 @@ app.post('/add-product', verifyToken ,async(req,res)=>{
     let product = new Product(req.body);
     let result = await product.save();
     res.send(result);
-
-
 })
 
 app.get("/product",async(req,res)=>{
