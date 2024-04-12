@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const addressSchema = new mongoose.Schema({
     user:String,
     name:String,
     mobilenumber:Number,
@@ -12,4 +12,4 @@ const userSchema = new mongoose.Schema({
     isdefault:Boolean
 })
 
-module.exports = mongoose.model("address",userSchema);
+module.exports = mongoose.model("address",addressSchema);
