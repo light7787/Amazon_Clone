@@ -15,7 +15,7 @@ const corsOptions = {
     origin: ["https://amazon-clone-front.vercel.app","http://localhost:5173" ],
     methods: "POST,GET,PUT,DELETE,HEAD,PATCH",
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization','authentication']
   };
 
 const app =express();
