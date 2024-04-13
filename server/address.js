@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const addressSchema = new mongoose.Schema({
     username:String,
     name:String,
-    mobilenumber:Number,
+    mobile:Number,
     pincode:Number,
     location:String,
     area:String,
