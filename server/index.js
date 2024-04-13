@@ -123,17 +123,19 @@ app.get('/product/:id',async(req,res)=>{
     }
 
 })
-app.get('/address/:id',async(req,res)=>{
-    let result = await Address.findOne({_id:req.params.id});
-    
-    if(result){
-        res.send(result);
-    }else{
-        res.send({result:"No record found"})
-
+app.get("/address/:username", async (req, res) => {
+    try {
+        const addresses = await Address.find({ username: req.params.username });
+        if (addresses.length > 0) {
+            res.send(addresses);
+        } else {
+            res.send({ result: "No addresses found for this username" });
+        }
+    } catch (error) {
+        console.error("Error searching for addresses:", error);
+        res.status(500).send("Something went wrong");
     }
-
-})
+});
 app.put('/product/:id',async(req,res)=>{
     let result = await Product.updateOne(
         {_id:req.params.id},
