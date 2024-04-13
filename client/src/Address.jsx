@@ -15,7 +15,7 @@ const Address = () => {
 
     const fetchAddresses = async () => {
         try {
-            let response = await fetch(`https://amazon-clone-back.vercel.app/address/user/${username}`);
+            let response = await fetch(`https://amazon-clone-back.vercel.app/address/${username}`);
             let data = await response.json();
             setAddresses(data);
         } catch (error) {
