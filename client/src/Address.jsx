@@ -18,11 +18,12 @@ const Address = () => {
             let response = await fetch(`https://amazon-clone-back.vercel.app/address/${username}`);
             let data = await response.json();
             setAddresses(data);
-            console.log(addresses);
+           
         } catch (error) {
             console.error('Error fetching addresses:', error);
         }
     };
+    console.log(addresses);
 
     return (
         <div>
