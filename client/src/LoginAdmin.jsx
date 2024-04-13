@@ -42,7 +42,7 @@ const LoginAdmin = () => {
   return (
     <div className="login h-[100vh] flex flex-col">
       <NavLink to="/">
-        <img className="login__logo mt-[20px] mb-[20px] object-contain w-[100px] mr-auto ml-auto" src="https://cdn.iconscout.com/icon/free/png-512/shopping-cart-442-1151214.png" alt="" />
+        <img className="login__logo mt-[20px] mb-[20px] object-contain w-[100px] mr-auto ml-auto" src="https://logos-world.net/wp-content/uploads/2020/04/Amazon-Logo.png" alt="" />
       </NavLink>
       <div className="login__container w-[300px] h-fit flex flex-col rounded-md border-solid border-black border-[1px] p-[20px] ml-auto mr-auto ">
         <h1 className="header font-bold mb-[20px]">Sign-in</h1>

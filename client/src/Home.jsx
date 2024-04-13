@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
+import CircularProgress from '@mui/material/CircularProgress'; // Import CircularProgress component
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useAuth } from './Store';
 
 function Home() {
   const [products, setProducts] = useState([]);
-  
+  const [loading, setLoading] = useState(true);
   const types = [{ type: 'mobile' }, { type: 'laptop' },{type:'earphone'},{type:'speakers'}];
 
   useEffect(() => {
@@ -18,8 +19,10 @@ function Home() {
       let response = await fetch('https://amazon-clone-back.vercel.app/product');
       let result = await response.json();
       setProducts(result);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching products:', error);
+      setLoading(false);
     }
   };
 
@@ -49,7 +52,6 @@ function Home() {
 
     return (
       <div className="relative">
-        
         <div className="absolute top-[150px]">
           <ArrowBackIosNewIcon
             onClick={() => updateBackgroundIndex(-1)}
@@ -64,30 +66,34 @@ function Home() {
         </div>
         <div className="w-full h-[570px] bg-cover absolute"
           style={{ backgroundImage: `url(${backgrounds[currentBackgroundIndex]})` }}>
-            <div  className="flex flex-col mt-[200px]">
-          {types.map((item, index) => (
-            <div className="flex w-full px-4 overflow-x-auto gap-8" key={index}>
-              {products
-                .filter((product) => product.category === item.type)
-                .map((product) => (
-                  <div key={product._id}>
-                    <Product
-                      id={product._id}
-                      title={product.name}
-                      price={product.price}
-                      rating={parseInt(product.rating)}
-                      image={product.img}
-                      largerDiv={true} // Added prop for larger div
-                    />
-                    <br />
-                  </div>
-                ))}
+          {loading ? ( // Conditionally render the loader based on the loading state
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+              <CircularProgress /> {/* Render the CircularProgress component while loading */}
             </div>
-          ))}
-           </div>
-                
+          ) : (
+            <div className="flex flex-col mt-[200px]">
+              {types.map((item, index) => (
+                <div className="flex w-full px-4 overflow-x-auto gap-8" key={index}>
+                  {products
+                    .filter((product) => product.category === item.type)
+                    .map((product) => (
+                      <div key={product._id}>
+                        <Product
+                          id={product._id}
+                          title={product.name}
+                          price={product.price}
+                          rating={parseInt(product.rating)}
+                          image={product.img}
+                          largerDiv={true} // Added prop for larger div
+                        />
+                        <br />
+                      </div>
+                    ))}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-        
       </div>
     );
   };

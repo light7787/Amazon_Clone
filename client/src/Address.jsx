@@ -11,7 +11,7 @@ const Address = () => {
         <div className='text-lg'>Your Account›Your Addresses</div>
         <div className='text-3xl'>Your Address</div>
         <NavLink to="/add-address">
-        <div className='w-1/4 h-[300px] border-dashed border-2 border-black mt-4 flex flex-col pt-[50px] pl-[80px] rounded-xl  '>
+        <div className='w-1/4 h-[300px] border-dashed border-2 border-black mt-4 flex flex-col pt-[50px] pl-[70px] rounded-xl  '>
           <img className='h-[125px] w-[125px] ml-5 opacity-15' src="https://www.pngall.com/wp-content/uploads/10/Plus-Symbol-Vector-PNG-Picture.png" alt="" />
           <div className='font-bold text-3xl'>Add address</div></div></NavLink>
           </div>

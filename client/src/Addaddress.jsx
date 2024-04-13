@@ -85,7 +85,13 @@ const Addaddress = () => {
           onChange={(e) => setLocation(e.target.value)}
         />
         {/* {error && !img && <p className="text-red-500 mb-4">Enter a valid image link</p> */}
-       
+        <input
+          type="text"
+          placeholder="Enter landmark/Area"
+          className="block w-full px-4 py-2 mb-4 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+          value={area}
+          onChange={(e) => setArea(e.target.value)}
+        />
 
         <input
           type="text"
