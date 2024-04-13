@@ -23,7 +23,7 @@ const Address = () => {
             console.error('Error fetching addresses:', error);
         }
     };
-    console.log(addresses);
+    // console.log(addresses);
 
     return (
         <div>
@@ -38,7 +38,7 @@ const Address = () => {
                     </div>
                 </NavLink>
                 <div className="grid grid-cols-3 gap-4 mt-8">
-                    {addresses.map((address, index) => (
+                    {addresses?.map((address, index) => (
                             <div key={index} className="bg-white border rounded-lg p-4">
                                 <p className="text-lg font-semibold">{address.name}</p>
                                 <p>{address.mobile}</p>
