@@ -73,7 +73,7 @@ function Home() {
           ) : (
             <div className="flex flex-col mt-[200px]">
               {types.map((item, index) => (
-              <div className="grid grid-cols-4 gap-8 px-4 hover:scale-110 transition-all ease-in-out duration-75 z-10">
+              <div className="grid grid-cols-4 gap-8 px-4 ">
                   {products
                     .filter((product) => product.category === item.type)
                     .map((product) => (

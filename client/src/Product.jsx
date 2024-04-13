@@ -36,7 +36,7 @@ function Product({ id, title, image, price, rating }) {
     }
 
     return (
-        <div className="flex flex-col items-center justify-between w-full m-3 p-5 bg-white border border-gray-200 rounded-md shadow-md">
+        <div className="flex flex-col items-center justify-between w-full m-3 p-5 bg-white border border-gray-200 rounded-md shadow-md hover:scale-110 transition-all ease-in-out duration-700 z-10 hover:mb-8 hover:shadow-lg">
             <div className="mb-3">
                 <p className="font-semibold">{title}</p>
                 <p className="text-gray-600">${price}</p>
