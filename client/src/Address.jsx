@@ -3,7 +3,18 @@ import Header from './Header'
 import AddIcon from '@mui/icons-material/Add';
 import { NavLink } from 'react-router-dom';
 
+
 const Address = () => {
+    const auth = localStorage.getItem("user");
+const user = JSON.parse(auth);
+const username = user.name;
+    const searchHandle = async (event) => {
+        let key = username;
+          let result = await fetch(`https://amazon-clone-back.vercel.app/address/${key}`);
+          result = await result.json();
+          console.log(result);
+         
+      }
   return (
     <div>
         <Header/>

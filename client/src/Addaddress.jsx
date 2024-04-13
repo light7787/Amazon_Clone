@@ -24,6 +24,9 @@ const Addaddress = () => {
     //   setError(true);
     //   return false;
     // }
+    
+ 
+
 
 
     let result = await fetch("https://amazon-clone-back.vercel.app/add-address", {

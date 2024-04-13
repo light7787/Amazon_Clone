@@ -8,7 +8,7 @@ import { useAuth } from './Store';
 function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const types = [{ type: 'mobile' }, { type: 'laptop' },{type:'earphone'},{type:'speakers'}];
+  const types = [{ type: 'mobile' }, { type: 'laptop' },{type:'earphone'},{type:'speakers'},,{type:'watch'}];
 
   useEffect(() => {
     getProducts();
@@ -73,7 +73,7 @@ function Home() {
           ) : (
             <div className="flex flex-col mt-[200px]">
               {types.map((item, index) => (
-                <div className="flex w-full px-4 overflow-x-auto gap-8" key={index}>
+              <div className="grid grid-cols-4 gap-8 px-4">
                   {products
                     .filter((product) => product.category === item.type)
                     .map((product) => (
