@@ -37,13 +37,16 @@ const Address = () => {
                 </NavLink>
                 <div className="grid grid-cols-3 gap-4 mt-8">
                     {addresses.map((address, index) => (
-                        <div key={index} className="bg-white border rounded-lg p-4">
-                            <p className="text-lg font-semibold">{address.name}</p>
-                            <p>{address.mobile}</p>
-                            <p>{address.location}, {address.area}</p>
-                            <p>{address.city}, {address.state} - {address.pin}</p>
-                            <p>{address.defaults ? "Default Address" : ""}</p>
-                        </div>
+                        // Check if the address belongs to the current user
+                        (address.username === username) && (
+                            <div key={index} className="bg-white border rounded-lg p-4">
+                                <p className="text-lg font-semibold">{address.name}</p>
+                                <p>{address.mobile}</p>
+                                <p>{address.location}, {address.area}</p>
+                                <p>{address.city}, {address.state} - {address.pin}</p>
+                                <p>{address.defaults ? "Default Address" : ""}</p>
+                            </div>
+                        )
                     ))}
                 </div>
             </div>
