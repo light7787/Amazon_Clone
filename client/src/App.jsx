@@ -15,6 +15,7 @@ import AccountUpdate from './AccountUpdate';
 import SearchPage from './SearchPage';
 import Address from './Address';
 import Addaddress from './Addaddress';
+import ProductPage from './ProductPage';
 
 // import PrivateComponent from './privateComponent';
 
@@ -27,6 +28,7 @@ function App() {
        <Routes>
         
         <Route path='/' element={<Chinu/>}/>
+        <Route path="/product/:id" element={< ProductPage/>} />
         <Route path='/Login' element={<Login/>}/>
         <Route path='/Signin' element={<Signin/>}/>
         <Route path='/adminlogin' element={<LoginAdmin/>}/>
@@ -40,6 +42,7 @@ function App() {
         <Route path='/searchpage' element={<SearchPage/>}/>
         <Route path='/address' element={<Address/>}/>
         <Route path='/add-address' element={<Addaddress/>}/>
+     
 
        
         

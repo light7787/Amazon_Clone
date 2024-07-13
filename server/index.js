@@ -6,11 +6,9 @@ const Product = require('./product');
 const Address = require('./address');
 
 
-
-
-
 const Jwt = require('jsonwebtoken');
 const JwtKey = 'e-comm';
+
 const corsOptions = {
     origin: ["https://amazon-clone-front.vercel.app","http://localhost:5173" ],
     methods: "POST,GET,PUT,DELETE,HEAD,PATCH",

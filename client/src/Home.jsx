@@ -9,6 +9,7 @@ function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const types = [{ type: 'mobile' }, { type: 'laptop' },{type:'earphone'},{type:'speakers'},,{type:'watch'}];
+  const[data,setData] = useState('');
 
   useEffect(() => {
     getProducts();
@@ -26,56 +27,36 @@ function Home() {
     }
   };
 
-  const backgrounds = [
-    'https://images-eu.ssl-images-amazon.com/images/G/31/img22/march/brands/GW/Under_1499_Tallhero_3000x1200._CB561212093_.jpg',
-    'https://images-eu.ssl-images-amazon.com/images/G/31/img22/WLA/2024/April/MAD/GW/D125900647_MAD_DAYS_GW_graphics_DesktopHero_3000x1200._CB561300798_.jpg',
-    'https://images-eu.ssl-images-amazon.com/images/G/31/OHL/24/BAU/feb/PC_hero_1_2x_1._CB582889946_.jpg',
-  ];
+  const filteredProducts = data
+  ? products.filter(product => product.category === data)
+  : products;
 
-  const BackgroundSlider = () => {
-    const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
 
-    const updateBackgroundIndex = (increment) => {
-      let newIndex = currentBackgroundIndex + increment;
-      if (newIndex < 0) {
-        newIndex = backgrounds.length - 1;
-      } else if (newIndex === backgrounds.length) {
-        newIndex = 0;
-      }
-      setCurrentBackgroundIndex(newIndex);
-    };
 
-    useEffect(() => {
-      const interval = setInterval(() => updateBackgroundIndex(1), 5000);
-      return () => clearInterval(interval);
-    }, []);
 
     return (
-      <div className="relative">
-        <div className="absolute top-[150px]">
-          <ArrowBackIosNewIcon
-            onClick={() => updateBackgroundIndex(-1)}
-            className="text-white cursor-pointer"
-          />
+      <div >
+        <div className='flex justify-center items-center gap-10 mt-10'>
+       <div className='flex flex-col justify-center items-center cursor-pointer'> <img onClick={(e)=>setData('mobile')}src="/mobile.png" alt="" width={150} height={150} /> <span className={data=='mobile'?'font-bold underline':''}>Mobiles</span></div>
+       <div className='flex flex-col justify-center items-center cursor-pointer'> <img  onClick={(e)=>setData('laptop')}src="/laptop.png" alt="" width={150} height={150} /><span className={data=='laptop'?'font-bold underline':''}>Laptops</span></div>
+       <div className='flex flex-col justify-center items-center cursor-pointer'> <img  onClick={(e)=>setData('speakers')}src="/speaker.png" alt="" width={150} height={150} /><span className={data=='speakers'?'font-bold underline':''}>Speakers</span></div>
+       <div className='flex flex-col justify-center items-center cursor-pointer'> <img onClick={(e)=>setData('earphone')} src="/earphone.png" alt="" width={150} height={150} /><span className={data=='earphone'?'font-bold underline':''}>Earphones</span></div>
+       <div className='flex flex-col justify-center items-center cursor-pointer'> <img onClick={(e)=>setData('watch')} src="/watch.png" alt="" width={150} height={150} /><span className={data=='watch'?'font-bold underline':''}>Watches</span></div>
         </div>
-        <div className="absolute top-[150px] right-0">
-          <ArrowForwardIosIcon
-            onClick={() => updateBackgroundIndex(1)}
-            className="text-white cursor-pointer"
-          />
-        </div>
-        <div className="w-full h-[570px] bg-cover absolute"
-          style={{ backgroundImage: `url(${backgrounds[currentBackgroundIndex]})` }}>
+  
+       
+ 
           {loading ? ( // Conditionally render the loader based on the loading state
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
               <CircularProgress /> {/* Render the CircularProgress component while loading */}
             </div>
           ) : (
-            <div className="flex flex-col mt-[200px]">
-              {types.map((item, index) => (
+            <div className="flex flex-col bg-black pt-6">
+            
               <div className="grid grid-cols-4 gap-8 px-4 ">
-                  {products
-                    .filter((product) => product.category === item.type)
+
+                  {filteredProducts
+                    
                     .map((product) => (
                       <div key={product._id}>
                         <Product
@@ -90,19 +71,15 @@ function Home() {
                       </div>
                     ))}
                 </div>
-              ))}
+       
             </div>
           )}
-        </div>
+      
       </div>
     );
   };
 
-  return (
-    <div>
-      <BackgroundSlider />
-    </div>
-  );
-}
+ 
+
 
 export default Home;
